@@ -46,7 +46,7 @@ public class ObjectPool : MonoBehaviour
                 {
                     return pooledObjects[i];
                 }
-            }            
+            }
         }
 
         // failed to find any free objects
@@ -65,10 +65,5 @@ public class ObjectPool : MonoBehaviour
         }
         // failed to find any free objects
         return null;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -16,3 +16,4 @@ MonoBehaviour:
   _revealSprite: {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
   _items:
   - {fileID: 11400000, guid: 5a72f455e36979344bbaf7abaf73ef0a, type: 2}
+  - {fileID: 11400000, guid: 6504753470556394882965cace393c55, type: 2}

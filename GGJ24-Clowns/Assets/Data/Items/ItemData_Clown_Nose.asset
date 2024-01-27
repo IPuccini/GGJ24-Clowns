@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678664bdcfe0afb4fab74277b5e9428a, type: 3}
   m_Name: ItemData_Clown_Nose
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _hideSprite: {fileID: 21300000, guid: 32ae6d38175dd417a99ce387a2361f35, type: 3}
+  _realSprite: {fileID: 21300000, guid: f3738768edb9f4a3b894321dea50e15f, type: 3}
   _properties:
   - {fileID: 11400000, guid: c441ea7bcdee22a41b1c71a7ae2d0442, type: 2}

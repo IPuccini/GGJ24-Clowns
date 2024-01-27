@@ -4,13 +4,17 @@
 public class ItemData : ScriptableObject
 {
 	[SerializeField]
-	private Sprite _sprite;
+	private Sprite _hideSprite;
+	[SerializeField]
+	private Sprite _realSprite;
+
 
 	[SerializeField]
 	private ItemPropertyBase[] _properties;
 
 
-	public Sprite Sprite => _sprite;
+	public Sprite HideSprite => _hideSprite;
+	public Sprite RealSprite => _realSprite;
 	public ItemPropertyBase[] Properties => _properties;
 }
 

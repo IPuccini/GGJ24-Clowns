@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Gameplay : MonoBehaviour
 {
 	[Header("Systems")]
 	[SerializeField]
 	private PersonController _personController;
-
+	[SerializeField]
+	private ItemsContainer _itemsContainer;
 
 	[Header("Data")]
 	[SerializeField]
@@ -50,7 +53,10 @@ public class Gameplay : MonoBehaviour
 		_currentPerson = _currentPeople[_currentPersonIndex];
 
 		_personController.Init(_currentPerson);
+
+		_itemsContainer.Init(_currentPerson.Items);
 	}
+
 
 	public void AcceptPerson(bool accept)
 	{
