@@ -939,6 +939,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1543031909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543031912}
+  - component: {fileID: 1543031911}
+  - component: {fileID: 1543031910}
+  m_Layer: 0
+  m_Name: RulesContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1543031910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543031909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28116de4dea1fbc4ca8c1806b964cb09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 7037148574434730979, guid: 6dfa8e6be4b771e4798e64ff004dc45a, type: 3}
+  amountToPool: 5
+--- !u!114 &1543031911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543031909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd939c7a26fc264cacab1e113450c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rulePool: {fileID: 1543031910}
+--- !u!4 &1543031912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543031909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557679121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1433,10 @@ PrefabInstance:
       propertyPath: _itemsContainer
       value: 
       objectReference: {fileID: 1162150300}
+    - target: {fileID: 8426839127364648752, guid: 2fa97bbde79e4a04a885135a78d77bf2, type: 3}
+      propertyPath: _rulesContainer
+      value: 
+      objectReference: {fileID: 1543031911}
     - target: {fileID: 8426839127364648752, guid: 2fa97bbde79e4a04a885135a78d77bf2, type: 3}
       propertyPath: _personController
       value: 

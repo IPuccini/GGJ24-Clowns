@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class Gameplay : MonoBehaviour
 {
 	[Header("Systems")]
@@ -11,6 +10,8 @@ public class Gameplay : MonoBehaviour
 	private PersonController _personController;
 	[SerializeField]
 	private ItemsContainer _itemsContainer;
+	[SerializeField]
+	private RulesController _rulesContainer;
 
 	[Header("Data")]
 	[SerializeField]
@@ -33,6 +34,8 @@ public class Gameplay : MonoBehaviour
 
 		_currentRules.Clear();
 		_currentRules.AddRange(_currentDay.Rules);
+
+		_rulesContainer.Init(_currentDay.Rules);
 
 		_currentPersonIndex = -1;
 
