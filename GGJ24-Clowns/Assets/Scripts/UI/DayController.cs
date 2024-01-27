@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 
+
 public class DayController : MonoBehaviour
 {
     public Action OnAnimationEnd;
@@ -20,7 +21,6 @@ public class DayController : MonoBehaviour
 	[SerializeField]
 	private float _duration = 3f;
 
-
 	public void Show(string description, int number)
     {
         _day.text = string.Format(_dayText, number);
@@ -34,7 +34,4 @@ public class DayController : MonoBehaviour
     {
         OnAnimationEnd?.Invoke();
     }
-
-
-
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class Gameplay : MonoBehaviour
 {
 	public Action OnDayOver;
+	public Action OnTimeOver;
 
 	[Header("Systems")]
 	[SerializeField]
@@ -83,6 +84,11 @@ public class Gameplay : MonoBehaviour
 	}
 	public void NextPerson()
 	{
+		if(!_active)
+		{
+			return;
+		}
+
 		_currentPersonIndex++;
 		if (_currentPersonIndex >= _currentPeople.Count)
 		{
@@ -117,7 +123,7 @@ public class Gameplay : MonoBehaviour
 			}else
 			{
 				Debug.Log("NICE! A clown was NOT accepted");
-
+				UpdateTimer(-_currentDay.ExtraTime);
 			}
 		}else
 		{
@@ -128,6 +134,7 @@ public class Gameplay : MonoBehaviour
 			else
 			{
 				Debug.Log("NICE! A normal person was accepted");
+				UpdateTimer(-_currentDay.ExtraTime);
 			}
 		}
 		_personController.Reveal();
@@ -164,9 +171,16 @@ public class Gameplay : MonoBehaviour
 	private void UpdateTimer(float delta)
 	{
 		_timer -= delta;
-		if(_timer <=.0f)
+		_timer = MathF.Min(_timer, _currentDay.LevelDuration);
+		if(_timer <=0f)
 		{
 			// NextDay();
+			_active = false;
+			_itemsContainer.Hide();
+			_personController.Hide();
+			_rulesContainer.Hide();
+			OnTimeOver?.Invoke();
+
 		}
 
 		_clock.UpdateTimer(_timer, _currentDay.LevelDuration);

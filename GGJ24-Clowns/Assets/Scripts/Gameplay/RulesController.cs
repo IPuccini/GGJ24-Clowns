@@ -14,15 +14,7 @@ public class RulesController : MonoBehaviour
 
 	public void Init(RulesDataBase[] rules)
 	{
-		if (_rules.Count > 0)
-		{
-			foreach (Rule rule in _rules)
-			{
-				rule.transform.parent = null;
-				rule.gameObject.SetActive(false);
-			}
-			_rules.Clear();
-		}
+		Hide();
 		_positions.Shuffle();
 
 		for (int i = 0; i < rules.Length; i++)
@@ -32,6 +24,19 @@ public class RulesController : MonoBehaviour
 			newRule.transform.parent = transform;
 			newRule.transform.position = _positions[i].position;
 			_rules.Add(newRule);
+		}
+	}
+
+	public void Hide()
+	{
+		if (_rules.Count > 0)
+		{
+			foreach (Rule rule in _rules)
+			{
+				rule.transform.parent = null;
+				rule.gameObject.SetActive(false);
+			}
+			_rules.Clear();
 		}
 	}
 }
