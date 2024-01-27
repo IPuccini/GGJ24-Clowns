@@ -31,6 +31,7 @@ public class PersonController : MonoBehaviour
 
 	public void Show()
 	{
+		Debug.Log("Show Person");
 		transform.DOKill();
 		transform.localPosition = _originalPosition - _offsetPosition;
 		transform.DOLocalMove(_originalPosition, _animationDuration).SetEase(Ease.OutQuart).OnComplete(()=>OnPersonShow?.Invoke());

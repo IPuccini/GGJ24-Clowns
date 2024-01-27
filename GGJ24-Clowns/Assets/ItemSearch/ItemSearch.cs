@@ -34,6 +34,8 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
 	public void Init(ItemData itemData)
 	{
+		transform.DOKill();
+
         _data = itemData;
         _hideSprite.sprite = _data.HideSprite;
         _realSprite.sprite = _data.RealSprite;
@@ -45,6 +47,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void Show()
     {
+        transform.DOKill();
         transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBack);
     }
 
@@ -61,6 +64,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         //Debug.Log("RO");
         //transform.DOScaleX(2.2f, 0.6f).SetEase(Ease.OutSine);
         //transform.DOScaleY(2.2f, 0.6f).SetEase(Ease.OutSine);
+        transform.DOKill();
         transform.DOScale(_rollOverScale, _animDurations).SetEase(Ease.OutSine);
     }
 
@@ -68,11 +72,12 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (!allowRollover) return;
 
-        //Debug.Log("RO");
+		//Debug.Log("RO");
 
-        //transform.DOScaleX(2.0f, 0.6f).SetEase(Ease.OutBounce);
-        //transform.DOScaleY(2.0f, 0.6f).SetEase(Ease.OutBounce);
-        transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBounce);
+		//transform.DOScaleX(2.0f, 0.6f).SetEase(Ease.OutBounce);
+		//transform.DOScaleY(2.0f, 0.6f).SetEase(Ease.OutBounce);
+		transform.DOKill();
+		transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBounce);
     }
 
     public void onClickShaderAnim()
@@ -81,7 +86,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
         allowRollover = false;
 
-        /*Debug.Log("RO");
+		/*Debug.Log("RO");
         transform.DOScaleX(2.4f, 0.6f).SetEase(Ease.OutBack).OnComplete(() => {
             rend = GetComponent<Renderer>();
             rend.material = material2;
@@ -94,7 +99,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
             });
         });
         transform.DOScaleY(2.4f, 0.6f).SetEase(Ease.OutBack);*/
-
+		transform.DOKill();
 		transform.DOScale(_clickScale, _animDurations).SetEase(Ease.OutBack).OnComplete(() => {
 			rend = GetComponent<Renderer>();
 			rend.material = material2;

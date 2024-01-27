@@ -6,7 +6,7 @@ public class ItemsContainer : MonoBehaviour
 	[SerializeField]
 	private ObjectPool _itemsPool;
 	[SerializeField]
-	private Transform _initialPosition; // TODO
+	private List<Transform> _positions;
 
 	private readonly List<ItemSearch> _activeItems = new List<ItemSearch>();
 
@@ -22,12 +22,16 @@ public class ItemsContainer : MonoBehaviour
 			}
 			_activeItems.Clear();
 		}
+		_positions.Shuffle();
 
-		foreach (ItemData item in items)
+
+		for (int i = 0; i < items.Length; i++)
 		{
+
 			ItemSearch newItem = _itemsPool.GetPooledObject().GetComponent<ItemSearch>();
-			newItem.Init(item);
+			newItem.Init(items[i]);
 			newItem.transform.parent = transform;
+			newItem.transform.position = _positions[i].position;
 			_activeItems.Add(newItem);
 		}
 	}

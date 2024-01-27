@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class StateGameplay : State
 {
@@ -11,6 +12,7 @@ public class StateGameplay : State
 
 	public override void Enter(StateManager manager)
 	{
+		_gameplay.OnDayOver += DayOver;
 		_canvasGroup.gameObject.SetActive(true);
 		_gameplay.SetActive(true);
 		base.Enter(manager);
@@ -18,8 +20,15 @@ public class StateGameplay : State
 		_gameplay.NextPerson();
 	}
 
+	private void DayOver()
+	{
+		ChangeState(_nextSate);
+	}
+
 	public override void Exit()
 	{
+
+		_gameplay.OnDayOver -= DayOver;
 		_canvasGroup.gameObject.SetActive(false);
 		base.Exit();
 	}

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour
 {
+	public Action OnDayOver;
+
 	[Header("Systems")]
 	[SerializeField]
 	private PersonController _personController;
@@ -18,7 +20,7 @@ public class Gameplay : MonoBehaviour
 
 	[Header("Data")]
 	[SerializeField]
-	private DayData _initialDayData;
+	private DayData[] _daysData;
 
 	private DayData _currentDay;
 	private PeopleData _currentPerson;
@@ -39,11 +41,12 @@ public class Gameplay : MonoBehaviour
 	private void Awake()
 	{
 		_personController.OnPersonShow += ShowItems;
-
+		_personController.OnPersonHide += NextPerson;
 	}
 
 	private void ShowItems()
 	{
+		Debug.Log("Show items");
 		_itemsContainer.Show();
 	}
 
@@ -86,6 +89,7 @@ public class Gameplay : MonoBehaviour
 			//TODO
 			Debug.LogWarning("Day ended. No more people");
 			//NextDay();
+			OnDayOver?.Invoke();
 			return;
 		}
 
@@ -95,6 +99,7 @@ public class Gameplay : MonoBehaviour
 		_personController.Show();
 
 		_itemsContainer.Init(_currentPerson.Items);
+		//_itemsContainer.Show();
 	}
 
 
@@ -108,9 +113,11 @@ public class Gameplay : MonoBehaviour
 			if (accept)
 			{
 				Debug.Log("WRONG! A clown was accepted");
+
 			}else
 			{
 				Debug.Log("NICE! A clown was NOT accepted");
+
 			}
 		}else
 		{
@@ -123,6 +130,9 @@ public class Gameplay : MonoBehaviour
 				Debug.Log("NICE! A normal person was accepted");
 			}
 		}
+		_personController.Reveal();
+		_itemsContainer.Hide();
+		_personController.Hide();
 		// todo dispatch event?
 	}
 
@@ -148,7 +158,7 @@ public class Gameplay : MonoBehaviour
 		// TODO
 		_currentDayIndex++;
 
-		InitDay(_initialDayData);
+		InitDay(_daysData[_currentDayIndex]);
 	}
 
 	private void UpdateTimer(float delta)
@@ -166,6 +176,7 @@ public class Gameplay : MonoBehaviour
 	public void SetActive(bool active)
 	{
 		_active = active;
+		_timer = _currentDay.LevelDuration;
 	}
 }
 
