@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Post it Template" src="project://database/Assets/UITemplates/Post%20it%20Template.uxml?fileID=9197481963319205126&amp;guid=f66d03ff0dbf64ba59d4b34185ef4199&amp;type=3#Post it Template" />
+    <Style src="project://database/Assets/UISSv1.uss?fileID=7433441132597879392&amp;guid=418474572f9f64959b654805c9393add&amp;type=3#UISSv1" />
+    <ui:VisualElement name="MasterContainer" style="height: 1616px; flex-direction: row;">
+        <ui:VisualElement style="flex-direction: column; justify-content: center; align-items: center; height: 1096px; width: 961px;">
+            <ui:VisualElement name="PortraitHolder" style="height: 828px; width: 961px; background-color: rgb(255, 255, 255); flex-direction: column; visibility: visible; overflow: visible;" />
+            <ui:VisualElement name="PostitHolder" style="height: 708px; width: 957px;">
+                <ui:Instance template="Post it Template" name="Post it Template" style="height: 292px; width: 357px; flex-direction: column; align-items: center; justify-content: center;" />
+                <ui:Instance template="Post it Template" name="Post it Template" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ItemSearch" style="height: 1088px; width: 964px; flex-direction: row;" />
+    </ui:VisualElement>
+</ui:UXML>
