@@ -103,6 +103,11 @@ MonoBehaviour:
   material2: {fileID: 2100000, guid: 7c829524304fc4fc89fee99b0f714527, type: 2}
   _hideSprite: {fileID: 3021417025116694821}
   _realSprite: {fileID: 3531775963982127120}
+  _normalScale: {x: 1, y: 1, z: 1}
+  _rollOverScale: {x: 2.2, y: 2.2, z: 1}
+  _clickScale: {x: 2.4, y: 2.4, z: 1}
+  _animDurations: 0.6
+  allowRollover: 1
 --- !u!61 &7972969123431211240
 BoxCollider2D:
   m_ObjectHideFlags: 0
