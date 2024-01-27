@@ -15,8 +15,6 @@ public class PersonController : MonoBehaviour
 	private PeopleData _data;
 	private Vector3 _originalPosition;
 
-	public bool IsClown => _data.IsClown;
-
 	private void Awake()
 	{
 		_originalPosition = transform.localPosition;

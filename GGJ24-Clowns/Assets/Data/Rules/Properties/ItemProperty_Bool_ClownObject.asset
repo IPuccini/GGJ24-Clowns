@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acee5327e19ffc946828ba97f0eb0478, type: 3}
-  m_Name: Day_Rules_Nothing
+  m_Script: {fileID: 11500000, guid: 534457f1cbbd5c647b7c5fd24cb2efb1, type: 3}
+  m_Name: ItemProperty_Bool_ClownObject
   m_EditorClassIdentifier: 
+  _value: 1

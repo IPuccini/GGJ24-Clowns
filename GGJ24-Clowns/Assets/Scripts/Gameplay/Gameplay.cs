@@ -18,7 +18,7 @@ public class Gameplay : MonoBehaviour
 	private int _currentPersonIndex = 0;
 
 	private readonly List<PeopleData> _currentPeople = new List<PeopleData>();
-
+	private readonly List<RulesDataBase> _currentRules = new List<RulesDataBase>();
 
 	public void InitDay(DayData newDay)
 	{
@@ -27,6 +27,9 @@ public class Gameplay : MonoBehaviour
 		_currentPeople.Clear();
 		_currentPeople.AddRange(_currentDay.People);
 		_currentPeople.Shuffle();
+
+		_currentRules.Clear();
+		_currentRules.AddRange(_currentDay.Rules);
 
 		_currentPersonIndex = -1;
 
@@ -47,6 +50,48 @@ public class Gameplay : MonoBehaviour
 		_currentPerson = _currentPeople[_currentPersonIndex];
 
 		_personController.Init(_currentPerson);
+	}
+
+	public void AcceptPerson(bool accept)
+	{
+		if(CheckIfIsClown())
+		{
+			// TODO Lose time
+			if (accept)
+			{
+				Debug.Log("WRONG! A clown was accepted");
+			}else
+			{
+				Debug.Log("NICE! A clown was NOT accepted");
+			}
+		}else
+		{
+			if (!accept)
+			{
+				Debug.Log("WRONG! A normal person was NOT accepted");
+			}
+			else
+			{
+				Debug.Log("NICE! A normal person was accepted");
+			}
+		}
+		// todo dispatch event?
+	}
+
+
+	private bool CheckIfIsClown()
+	{
+		foreach (RulesDataBase rule in _currentRules)
+		{
+			foreach (ItemData item in _currentPerson.Items)
+			{
+				if(rule.CheckRule(item))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 

@@ -8,10 +8,10 @@ public class DayData : ScriptableObject
 	[SerializeField]
 	private PeopleData[] _people;
 	[SerializeField]
-	private RulesData[] _rules;
+	private RulesDataBase[] _rules;
 
 	public PeopleData[] People => _people;
-	public RulesData[] Rules => _rules;
+	public RulesDataBase[] Rules => _rules;
 
 }
 
