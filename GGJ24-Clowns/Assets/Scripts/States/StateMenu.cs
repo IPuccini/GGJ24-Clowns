@@ -9,9 +9,9 @@ public class StateMenu : State
 	[SerializeField]
 	private State _nextSate;
 
-	private void Start()
+	private void Awake()
 	{
-		_menu.OnStart +=  ()=> ChangeState(_nextSate);
+		_menu.OnStart =  ()=> ChangeState(_nextSate);
 	}
 
 	public override void Enter(StateManager manager)

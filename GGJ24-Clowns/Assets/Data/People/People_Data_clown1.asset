@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abd3938990cf5249900baef79ab342e, type: 3}
+  m_Name: People_Data_clown1
+  m_EditorClassIdentifier: 
+  _hideSprite: {fileID: 21300000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
+  _revealSprite: {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+  _isClown: 1
