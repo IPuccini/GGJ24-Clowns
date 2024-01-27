@@ -8,7 +8,7 @@ public class StateStart : State
 	[SerializeField]
 	private Gameplay _gameplay;
 	[SerializeField]
-	private CanvasGroup _gameplayUI;
+	private DayController _dayUI;
 
 	[SerializeField]
 	private State _nextSate;
@@ -19,12 +19,20 @@ public class StateStart : State
 		base.Enter(manager);
 
 		_gameplay.NextDay();
-		_gameplayUI.gameObject.SetActive(true);// TODO
+		_dayUI.Show(_gameplay.CurrentDayData.Description, _gameplay.CurrentDayIndex);
+		_dayUI.gameObject.SetActive(true);// TODO
+		_dayUI.OnAnimationEnd += GoToNextState;
+	}
+
+	private void GoToNextState()
+	{
+		ChangeState(_nextSate);
 	}
 
 	public override void Exit()
 	{
-		_gameplayUI.gameObject.SetActive(false);
+		_dayUI.OnAnimationEnd -= GoToNextState;
+		_dayUI.gameObject.SetActive(false);
 		base.Exit();
 	}
 

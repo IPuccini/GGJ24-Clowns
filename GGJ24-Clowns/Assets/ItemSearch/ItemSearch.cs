@@ -37,15 +37,28 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         _data = itemData;
         _hideSprite.sprite = _data.HideSprite;
         _realSprite.sprite = _data.RealSprite;
+        _realSprite.gameObject.SetActive(false);
+        transform.localScale = Vector3.zero;
 
         gameObject.SetActive(true);
+    }
+
+    public void Show()
+    {
+        transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBack);
+    }
+
+    public void Hide()
+    {
+        transform.DOKill();
+        transform.DOScale(0, _animDurations).SetEase(Ease.InBack);
     }
 
     public void onRollover()
     {
         if (!allowRollover) return;
 
-        Debug.Log("RO");
+        //Debug.Log("RO");
         //transform.DOScaleX(2.2f, 0.6f).SetEase(Ease.OutSine);
         //transform.DOScaleY(2.2f, 0.6f).SetEase(Ease.OutSine);
         transform.DOScale(_rollOverScale, _animDurations).SetEase(Ease.OutSine);
@@ -55,7 +68,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (!allowRollover) return;
 
-        Debug.Log("RO");
+        //Debug.Log("RO");
 
         //transform.DOScaleX(2.0f, 0.6f).SetEase(Ease.OutBounce);
         //transform.DOScaleY(2.0f, 0.6f).SetEase(Ease.OutBounce);

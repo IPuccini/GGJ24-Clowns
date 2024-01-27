@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class Gameplay : MonoBehaviour
 	private ItemsContainer _itemsContainer;
 	[SerializeField]
 	private RulesController _rulesContainer;
+	[SerializeField]
+	private Clock _clock;
 
 	[Header("Data")]
 	[SerializeField]
@@ -21,8 +24,28 @@ public class Gameplay : MonoBehaviour
 	private PeopleData _currentPerson;
 	private int _currentPersonIndex = 0;
 
+	private float _timer = 0;
+	private bool _active = false;
+	private int _currentDayIndex = -1;
+
+
 	private readonly List<PeopleData> _currentPeople = new List<PeopleData>();
 	private readonly List<RulesDataBase> _currentRules = new List<RulesDataBase>();
+
+	public int CurrentDayIndex => _currentDayIndex;
+	public DayData CurrentDayData => _currentDay;
+
+
+	private void Awake()
+	{
+		_personController.OnPersonShow += ShowItems;
+
+	}
+
+	private void ShowItems()
+	{
+		_itemsContainer.Show();
+	}
 
 	public void InitDay(DayData newDay)
 	{
@@ -39,9 +62,22 @@ public class Gameplay : MonoBehaviour
 
 		_currentPersonIndex = -1;
 
-		NextPerson();
+		_timer = _currentDay.LevelDuration;
+		UpdateTimer(0);;
+
+		//NextPerson();
 	}
 
+	private void Update()
+	{
+		if(!_active )
+		{
+			return;
+		}
+
+		UpdateTimer(Time.deltaTime);
+
+	}
 	public void NextPerson()
 	{
 		_currentPersonIndex++;
@@ -56,9 +92,12 @@ public class Gameplay : MonoBehaviour
 		_currentPerson = _currentPeople[_currentPersonIndex];
 
 		_personController.Init(_currentPerson);
+		_personController.Show();
 
 		_itemsContainer.Init(_currentPerson.Items);
 	}
+
+
 
 
 	public void AcceptPerson(bool accept)
@@ -107,9 +146,27 @@ public class Gameplay : MonoBehaviour
 	public void NextDay()
 	{
 		// TODO
+		_currentDayIndex++;
+
 		InitDay(_initialDayData);
 	}
 
+	private void UpdateTimer(float delta)
+	{
+		_timer -= delta;
+		if(_timer <=.0f)
+		{
+			// NextDay();
+		}
+
+		_clock.UpdateTimer(_timer, _currentDay.LevelDuration);
+
+	}
+
+	public void SetActive(bool active)
+	{
+		_active = active;
+	}
 }
 
 

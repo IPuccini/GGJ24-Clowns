@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class PersonController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PersonController : MonoBehaviour
 	private SpriteRenderer _spriteRenderer;
 	[SerializeField]
 	private Vector3 _offsetPosition;
+	[SerializeField]
+	private float _animationDuration = 1f;
 
 
 	private PeopleData _data;
@@ -23,36 +26,26 @@ public class PersonController : MonoBehaviour
 	public void Init(PeopleData newData)
 	{
 		_data = newData;
-
-		// TODO
 		SetSprite(_data.HideSprite);
-
 	}
 
 	public void Show()
 	{
+		transform.DOKill();
 		transform.localPosition = _originalPosition - _offsetPosition;
-		//TODO
-		//TWeen position
-		transform.localPosition = _originalPosition;
-		// TODO on complete tween
-		OnPersonShow?.Invoke();
+		transform.DOLocalMove(_originalPosition, _animationDuration).SetEase(Ease.OutQuart).OnComplete(()=>OnPersonShow?.Invoke());
 	}
 
 	public void Reveal()
 	{
-		// TODO
+		// TODO Particles or something like that
 		SetSprite(_data.RevealSprite);
-
-		OnPersonHide?.Invoke();
 	}
 
 	public void Hide()
 	{
-		//TODO
-		//tween position transform.local + offset
-		//On complete tween
-		OnPersonHide?.Invoke();
+		transform.DOKill();
+		transform.DOLocalMove(_originalPosition + _offsetPosition, _animationDuration).SetEase(Ease.OutQuart).OnComplete(() => OnPersonHide?.Invoke());
 	}
 
 

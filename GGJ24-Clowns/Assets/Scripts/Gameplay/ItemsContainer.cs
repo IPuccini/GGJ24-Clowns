@@ -17,6 +17,7 @@ public class ItemsContainer : MonoBehaviour
 		{
 			foreach (ItemSearch item in _activeItems)
 			{
+				item.transform.parent = null;
 				item.gameObject.SetActive(false);
 			}
 			_activeItems.Clear();
@@ -26,7 +27,24 @@ public class ItemsContainer : MonoBehaviour
 		{
 			ItemSearch newItem = _itemsPool.GetPooledObject().GetComponent<ItemSearch>();
 			newItem.Init(item);
+			newItem.transform.parent = transform;
 			_activeItems.Add(newItem);
+		}
+	}
+
+	public void Show()
+	{
+		foreach (ItemSearch item in _activeItems)
+		{
+			item.Show();
+		}
+	}
+
+	public void Hide()
+	{
+		foreach (ItemSearch item in _activeItems)
+		{
+			item.Hide();
 		}
 	}
 }

@@ -3,6 +3,8 @@
 [CreateAssetMenu(fileName = "Day_Data_New", menuName = "GGJ24/Day/Data")]
 public class DayData : ScriptableObject
 {
+	[SerializeField, TextArea]
+	private string _description = string.Empty;
 	[SerializeField]
 	private float _levelDuration = 10f;
 	[SerializeField]
@@ -10,8 +12,10 @@ public class DayData : ScriptableObject
 	[SerializeField]
 	private RulesDataBase[] _rules;
 
+	public string Description => _description;
 	public PeopleData[] People => _people;
 	public RulesDataBase[] Rules => _rules;
+	public float LevelDuration => _levelDuration;
 
 }
 

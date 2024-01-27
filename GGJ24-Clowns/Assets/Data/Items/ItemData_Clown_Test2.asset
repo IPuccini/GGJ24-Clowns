@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678664bdcfe0afb4fab74277b5e9428a, type: 3}
   m_Name: ItemData_Clown_Test2
   m_EditorClassIdentifier: 
-  _hideSprite: {fileID: 21300000, guid: 32ae6d38175dd417a99ce387a2361f35, type: 3}
-  _realSprite: {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+  _hideSprite: {fileID: 21300000, guid: bed472dc9c6cd6e4093746d11c069d45, type: 3}
+  _realSprite: {fileID: 21300000, guid: 625facd77fe3a8e41889b3d72239c14e, type: 3}
   _properties:
   - {fileID: 11400000, guid: c441ea7bcdee22a41b1c71a7ae2d0442, type: 2}
