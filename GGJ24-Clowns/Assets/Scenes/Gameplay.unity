@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 2066323916}
   _text: {fileID: 172065454}
-  _message: You survived {0} days without a clown coup!
+  _message: you survived <b>{0}</b> days without a clown coup!
   _duration: 8
 --- !u!225 &2066323916
 CanvasGroup:
@@ -2713,6 +2713,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 212325461352033712, guid: 7409cb1cb1d60e74fad7f1dfa6a040db, type: 3}
+      propertyPath: _clownPerson
+      value: 
+      objectReference: {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+    - target: {fileID: 212325461352033712, guid: 7409cb1cb1d60e74fad7f1dfa6a040db, type: 3}
+      propertyPath: _normalPerson
+      value: 
+      objectReference: {fileID: 21300000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
     - target: {fileID: 212325461352033713, guid: 7409cb1cb1d60e74fad7f1dfa6a040db, type: 3}
       propertyPath: m_Name
       value: Person
@@ -3202,6 +3210,10 @@ PrefabInstance:
     - target: {fileID: 8967411584775723045, guid: 1ec9c5758a6846e49bbcc49971da0446, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967411585938981125, guid: 1ec9c5758a6846e49bbcc49971da0446, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec9c5758a6846e49bbcc49971da0446, type: 3}

@@ -18,4 +18,4 @@ MonoBehaviour:
   _people:
   - {fileID: 11400000, guid: 7adcc24101c81c645aa29071b4e9722f, type: 2}
   _rules:
-  - {fileID: 11400000, guid: bc8e96b78b1eb9947ac21d77b63bfea0, type: 2}
+  - {fileID: 11400000, guid: eaac32cf470bb1e47bfa57dcbe78d12a, type: 2}
