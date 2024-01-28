@@ -51,7 +51,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         //_realSprite.gameObject.SetActive(false);
         transform.localScale = Vector3.zero;
 
-        //_hideSprite.material = material1; // Reseting material
+        _hideSprite.material = material1; // Reseting material
 
         //material2 = Resources.Load("Shaders/ItemMat/Dissolve_" + ID + ".mat", typeof(Material)) as Material;
         //material2 = materials[ID];
@@ -65,7 +65,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 		material2.SetFloat("_Position", 1f);
 
 		_realSprite.transform.localScale = Vector3.zero;
-
+        allowRollover = true;
     }
 
     public void Show(float delay)
