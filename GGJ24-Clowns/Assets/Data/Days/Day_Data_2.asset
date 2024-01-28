@@ -16,10 +16,8 @@ MonoBehaviour:
   _levelDuration: 10
   _extraTime: 5
   _people:
-  - {fileID: 11400000, guid: 7adcc24101c81c645aa29071b4e9722f, type: 2}
+  - {fileID: 11400000, guid: 93b933691d6f4a344b152bbe2fb0e3c0, type: 2}
   - {fileID: 11400000, guid: 02fefbaa484f1474ba5eb23923c8e769, type: 2}
+  - {fileID: 11400000, guid: 61c883750245f6e4597934eaaea334cd, type: 2}
   _rules:
   - {fileID: 11400000, guid: eaac32cf470bb1e47bfa57dcbe78d12a, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}

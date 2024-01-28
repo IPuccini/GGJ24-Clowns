@@ -18,7 +18,7 @@ MonoBehaviour:
   _people:
   - {fileID: 11400000, guid: 7adcc24101c81c645aa29071b4e9722f, type: 2}
   - {fileID: 11400000, guid: 02fefbaa484f1474ba5eb23923c8e769, type: 2}
+  - {fileID: 11400000, guid: 874a69bb5d060ee488a0c60b435c6dc6, type: 2}
+  - {fileID: 11400000, guid: ef187ecfe7fde094abc4e89792f41933, type: 2}
   _rules:
   - {fileID: 11400000, guid: eaac32cf470bb1e47bfa57dcbe78d12a, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}

@@ -17,5 +17,6 @@ MonoBehaviour:
   _extraTime: 3
   _people:
   - {fileID: 11400000, guid: 7adcc24101c81c645aa29071b4e9722f, type: 2}
+  - {fileID: 11400000, guid: 874a69bb5d060ee488a0c60b435c6dc6, type: 2}
   _rules:
   - {fileID: 11400000, guid: eaac32cf470bb1e47bfa57dcbe78d12a, type: 2}

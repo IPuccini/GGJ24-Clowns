@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678664bdcfe0afb4fab74277b5e9428a, type: 3}
   m_Name: ItemData_Flower_Clown
   m_EditorClassIdentifier: 
-  _hideSprite: {fileID: 21300000, guid: d85183a001a177647b223b02c7ef7327, type: 3}
+  _hideSprite: {fileID: 21300000, guid: 7f5f75c87420e8d4a9cee67bf80de3ab, type: 3}
   _realSprite: {fileID: 21300000, guid: c0111759ac9e2d44d9c2870e8631b6a9, type: 3}
   _properties:
   - {fileID: 11400000, guid: 67e7ba81ef7b77045aba2bb5358ffd47, type: 2}

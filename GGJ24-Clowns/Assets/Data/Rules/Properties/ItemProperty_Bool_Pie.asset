@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534457f1cbbd5c647b7c5fd24cb2efb1, type: 3}
   m_Name: ItemProperty_Bool_Pie
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 0
