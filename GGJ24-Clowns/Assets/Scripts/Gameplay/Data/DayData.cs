@@ -10,12 +10,15 @@ public class DayData : ScriptableObject
 	[SerializeField]
 	private float _extraTime = 5f;
 	[SerializeField]
+	private float _loseTime = 5f;
+	[SerializeField]
 	private PeopleData[] _people;
 	[SerializeField]
 	private RulesDataBase[] _rules;
 
 	public string Description => _description;
 	public float ExtraTime => _extraTime;
+	public float LoseTime => _loseTime;
 	public PeopleData[] People => _people;
 	public RulesDataBase[] Rules => _rules;
 	public float LevelDuration => _levelDuration;

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c471511ff3b90f41a7c2c994a55ff09, type: 3}
-  m_Name: ItemProperty_Int_Bow_4
+  m_Name: ItemProperty_Int_Spots_9
   m_EditorClassIdentifier: 
-  _value: 4
+  _value: 9

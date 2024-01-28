@@ -18,6 +18,9 @@ public class Gameplay : MonoBehaviour
 	private RulesController _rulesContainer;
 	[SerializeField]
 	private Clock _clock;
+	[SerializeField]
+	private CanvasGroup _buttons;
+
 
 	[Header("Data")]
 	[SerializeField]
@@ -51,6 +54,7 @@ public class Gameplay : MonoBehaviour
 	{
 		Debug.Log("Show items");
 		_itemsContainer.Show();
+		_buttons.interactable = true;
 	}
 
 	public void InitDay(DayData newDay)
@@ -72,6 +76,8 @@ public class Gameplay : MonoBehaviour
 		UpdateTimer(0);;
 
 		//NextPerson();
+
+		_buttons.interactable = false;
 	}
 
 	private void Update()
@@ -124,8 +130,10 @@ public class Gameplay : MonoBehaviour
 				_personController.Hide();
                 FindObjectOfType<AudioManager>().Play("Incorrect");
 
-            }
-            else
+				UpdateTimer(_currentDay.LoseTime);
+
+			}
+			else
 			{
 				Debug.Log("NICE! A clown was NOT accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
@@ -141,8 +149,8 @@ public class Gameplay : MonoBehaviour
 			{
 				Debug.Log("WRONG! A normal person was NOT accepted");
 				_personController.Hide(true);
+				UpdateTimer(_currentDay.LoseTime);
 				FindObjectOfType<AudioManager>().Play("Incorrect");
-
 			}
 			else
 			{
@@ -154,6 +162,7 @@ public class Gameplay : MonoBehaviour
 			}
 		}
 		_itemsContainer.Hide();
+		_buttons.interactable = false;
 		// todo dispatch event?
 	}
 
@@ -191,6 +200,7 @@ public class Gameplay : MonoBehaviour
 			// NextDay();
 			_active = false;
 			_itemsContainer.Hide();
+			_buttons.interactable = false;
 			_personController.Hide();
 			_rulesContainer.Hide();
 			OnTimeOver?.Invoke();
