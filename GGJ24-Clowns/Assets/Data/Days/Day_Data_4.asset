@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8a5b4e5ee596b549a06994fbd1eb3b7, type: 3}
-  m_Name: Day_Data_2
+  m_Name: Day_Data_4
   m_EditorClassIdentifier: 
-  _description: not a funny company is no place for clowns!
+  _description: i hereby declare war, on fun and tomfoolery
   _levelDuration: 10
   _extraTime: 5
   _people:
@@ -20,6 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 02fefbaa484f1474ba5eb23923c8e769, type: 2}
   _rules:
   - {fileID: 11400000, guid: eaac32cf470bb1e47bfa57dcbe78d12a, type: 2}
-  - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}
   - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}
   - {fileID: 11400000, guid: 9a71a953919bbaf4ab99f08770c0d644, type: 2}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c471511ff3b90f41a7c2c994a55ff09, type: 3}
-  m_Name: ItemProperty_Int_Bow_6
+  m_Script: {fileID: 11500000, guid: 534457f1cbbd5c647b7c5fd24cb2efb1, type: 3}
+  m_Name: ItemProperty_Bool_Flower
   m_EditorClassIdentifier: 
-  _value: 6
+  _value: 1
