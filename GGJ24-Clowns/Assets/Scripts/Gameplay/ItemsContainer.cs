@@ -13,6 +13,11 @@ public class ItemsContainer : MonoBehaviour
 
 	private readonly List<ItemSearch> _activeItems = new List<ItemSearch>();
 
+	private void Awake()
+	{
+
+		_briefcase.transform.localScale = new Vector3(1, 0, 1);
+	}
 
 	public void Init(ItemData[] items)
 	{

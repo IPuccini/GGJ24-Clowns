@@ -44,6 +44,7 @@ public class Gameplay : MonoBehaviour
 		_personController.OnPersonShow += ShowItems;
 		_personController.OnPersonHide += NextPerson;
 
+		FindObjectOfType<AudioManager>().Play("BGMusic");
 	}
 
 	private void ShowItems()
@@ -109,48 +110,42 @@ public class Gameplay : MonoBehaviour
 		//_itemsContainer.Show();
 	}
 
-
-
-
 	public void AcceptPerson(bool accept)
 	{
-		if(CheckIfIsClown())
+		bool isClown = CheckIfIsClown();
+
+		_personController.Reveal(isClown);
+		if (isClown)
 		{
 			// TODO Lose time
 			if (accept)
 			{
 				Debug.Log("WRONG! A clown was accepted");
-				//FindObjectOfType<AudioManager>().Play("Incorrect");
-
+				_personController.Hide();
 
 			}
 			else
 			{
 				Debug.Log("NICE! A clown was NOT accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
-				//FindObjectOfType<AudioManager>().Play("Correct");
 
+				_personController.Hide(true);
 			}
-		}
-		else
+		}else
 		{
 			if (!accept)
 			{
 				Debug.Log("WRONG! A normal person was NOT accepted");
-				//FindObjectOfType<AudioManager>().Play("Incorrect");
-
+				_personController.Hide(true);
 			}
 			else
 			{
 				Debug.Log("NICE! A normal person was accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
-				//FindObjectOfType<AudioManager>().Play("Correct");
-
+				_personController.Hide();
 			}
 		}
-		_personController.Reveal();
 		_itemsContainer.Hide();
-		_personController.Hide();
 		// todo dispatch event?
 	}
 

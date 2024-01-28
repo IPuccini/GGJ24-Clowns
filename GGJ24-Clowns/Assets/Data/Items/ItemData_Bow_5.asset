@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678664bdcfe0afb4fab74277b5e9428a, type: 3}
+  m_Name: ItemData_Bow_5
+  m_EditorClassIdentifier: 
+  _hideSprite: {fileID: 21300000, guid: bed472dc9c6cd6e4093746d11c069d45, type: 3}
+  _realSprite: {fileID: 21300000, guid: 436f2e73a54147445824d4fa2172fbc8, type: 3}
+  _properties:
+  - {fileID: 11400000, guid: a9128381d5191d641aa7352d1b5c74ad, type: 2}
