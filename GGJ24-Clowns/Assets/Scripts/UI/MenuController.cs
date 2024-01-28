@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
 	public void Show()
 	{
 		gameObject.SetActive(true);
+
 	}
 
 	public void Hide()
