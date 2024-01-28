@@ -10,6 +10,11 @@ public class PersonController : MonoBehaviour
 	[SerializeField]
 	private SpriteRenderer _spriteRenderer;
 	[SerializeField]
+	private Sprite _normalPerson;
+	[SerializeField]
+	private Sprite _clownPerson;
+
+	[SerializeField]
 	private Vector3 _offsetPosition;
 	[SerializeField]
 	private float _animationDuration = 1f;
@@ -26,33 +31,35 @@ public class PersonController : MonoBehaviour
 	public void Init(PeopleData newData)
 	{
 		_data = newData;
-		SetSprite(_data.HideSprite);
+		SetSprite(_normalPerson);
 	}
 
 	public void Show()
 	{
-		Debug.Log("Show Person");
+		//Debug.Log("Show Person");
 		transform.DOKill();
 		transform.localPosition = _originalPosition - _offsetPosition;
 		transform.DOLocalMove(_originalPosition, _animationDuration).SetEase(Ease.OutQuart).OnComplete(()=>OnPersonShow?.Invoke());
 	}
 
-	public void Reveal()
+	public void Reveal(bool isClown)
 	{
 		// TODO Particles or something like that
-		SetSprite(_data.RevealSprite);
+		SetSprite(isClown? _clownPerson : _normalPerson);
 	}
 
-	public void Hide()
+	public void Hide(bool left = false)
 	{
+		_spriteRenderer.flipX = left;
 		transform.DOKill();
-		transform.DOLocalMove(_originalPosition + _offsetPosition, _animationDuration).SetEase(Ease.OutQuart).OnComplete(() => OnPersonHide?.Invoke());
+		transform.DOLocalMove(_originalPosition + _offsetPosition  * (left? -1 :1), _animationDuration).SetDelay(.3f).SetEase(Ease.OutQuart).OnComplete(() => OnPersonHide?.Invoke());
 	}
 
 
 	private void SetSprite(Sprite sprite)
 	{
 		_spriteRenderer.sprite = sprite;
+		_spriteRenderer.flipX = false;
 	}
 }
 

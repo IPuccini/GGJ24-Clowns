@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 7889582423800825328}
-  _offsetPosition: {x: 3, y: 0, z: 0}
+  _offsetPosition: {x: 3.5, y: 0, z: 0}
   _animationDuration: 2
 --- !u!1 &2007979248596138295
 GameObject:

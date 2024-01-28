@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Items
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 87c2a47b177ce104a88a232921981fd1, type: 3}
+    - {fileID: 2800000, guid: 6199e9f1d6ff6fe4bb41d519d0c2c87e, type: 3}
+    - {fileID: 2800000, guid: 625facd77fe3a8e41889b3d72239c14e, type: 3}
+    - {fileID: 2800000, guid: ea0e71f7ebc40324f87dac71045aaa4f, type: 3}
+    - {fileID: 2800000, guid: 51ba0cc330eaf9741b48e99165802793, type: 3}
+    - {fileID: 2800000, guid: bed472dc9c6cd6e4093746d11c069d45, type: 3}
+    - {fileID: 2800000, guid: 7f5f75c87420e8d4a9cee67bf80de3ab, type: 3}
+    - {fileID: 2800000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+    - {fileID: 2800000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
+    - {fileID: 2800000, guid: a93c56c0b4b591d4f99b8d120ba37788, type: 3}
+    - {fileID: 2800000, guid: 772fc6bfa3be36f449d87b83e76c5ae5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a93c56c0b4b591d4f99b8d120ba37788, type: 3}
+  - {fileID: 21300000, guid: 6199e9f1d6ff6fe4bb41d519d0c2c87e, type: 3}
+  - {fileID: 21300000, guid: 51ba0cc330eaf9741b48e99165802793, type: 3}
+  - {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+  - {fileID: 21300000, guid: 625facd77fe3a8e41889b3d72239c14e, type: 3}
+  - {fileID: 21300000, guid: ea0e71f7ebc40324f87dac71045aaa4f, type: 3}
+  - {fileID: 21300000, guid: 7f5f75c87420e8d4a9cee67bf80de3ab, type: 3}
+  - {fileID: 21300000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
+  - {fileID: 21300000, guid: 87c2a47b177ce104a88a232921981fd1, type: 3}
+  - {fileID: 21300000, guid: bed472dc9c6cd6e4093746d11c069d45, type: 3}
+  - {fileID: 21300000, guid: 772fc6bfa3be36f449d87b83e76c5ae5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PieRegular
+  - BowtieNormal (1)
+  - ClownPie
+  - Person_Clown
+  - BowtieNormal
+  - Briefcase
+  - Flower
+  - Person_Normal
+  - BalloonNormal
+  - ClownShoe
+  - RegularShoe
+  m_RenderDataMap: {}
+  m_Tag: Items
+  m_IsVariant: 0

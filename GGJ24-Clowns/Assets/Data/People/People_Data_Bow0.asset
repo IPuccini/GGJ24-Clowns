@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4abd3938990cf5249900baef79ab342e, type: 3}
-  m_Name: People_Data_clown1
+  m_Name: People_Data_Bow0
   m_EditorClassIdentifier: 
   _hideSprite: {fileID: 21300000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
-  _revealSprite: {fileID: 21300000, guid: ff88fac4d783ac34c8ee2c66295858b9, type: 3}
+  _revealSprite: {fileID: 21300000, guid: 1233e15b690fb804fa4e4de7b7ca8bff, type: 3}
   _items:
-  - {fileID: 11400000, guid: 5a72f455e36979344bbaf7abaf73ef0a, type: 2}
-  - {fileID: 11400000, guid: 6504753470556394882965cace393c55, type: 2}
+  - {fileID: 11400000, guid: 37b9e6e008781c54aa68d466f8ac4e82, type: 2}
