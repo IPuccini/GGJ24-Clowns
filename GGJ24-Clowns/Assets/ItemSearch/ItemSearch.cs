@@ -31,7 +31,7 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public bool allowRollover = true;
 
-    public float ShaderPos = 1;
+    //public float ShaderPos = 1;
 
     public void Init(ItemData itemData)
 	{
@@ -117,19 +117,19 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 			_hideSprite.material = material2;
 
 
-            ShaderPos = 1;
+            //ShaderPos = 1;
             //material2.SetFloat("Position", ShaderPos);
 
 
-            DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnStepComplete(()=> {
-                material2.SetFloat("Position", ShaderPos);
-            });
+            //DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnStepComplete(()=> {
+            //    material2.SetFloat("Position", ShaderPos);
+            //});
 
             transform.DOScale(_clickScale, 2.5f).OnComplete(() =>
             {
                 //rend.material = Empty;
                 //rend.material.color.a = 0;
-                //_hideSprite.enabled = false;
+                _hideSprite.enabled = false;
 
             });
         });
