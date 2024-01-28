@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd8c5b1fe60b454d9d5b71579823e8e, type: 3}
   m_Name: Rules_BasicCheck_TEst
   m_EditorClassIdentifier: 
-  _text: 'No red noses!
-
-'
+  _text: no red noses!

@@ -29,8 +29,8 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     private ItemData _data;
 
-
     public bool allowRollover = true;
+
 
 	public void Init(ItemData itemData)
 	{
@@ -42,19 +42,22 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         _realSprite.gameObject.SetActive(false);
         transform.localScale = Vector3.zero;
 
-        gameObject.SetActive(true);
+        _hideSprite.material = material1; // Reseting material
+		_hideSprite.enabled = true;
+
+		gameObject.SetActive(true);
     }
 
-    public void Show()
+    public void Show(float delay)
     {
         transform.DOKill();
-        transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBack);
+        transform.DOScale(_normalScale, _animDurations).SetDelay(delay).SetEase(Ease.OutBack);
     }
 
     public void Hide()
     {
         transform.DOKill();
-        transform.DOScale(0, _animDurations).SetEase(Ease.InBack);
+        transform.DOScale(0, _animDurations * .5f).SetEase(Ease.InBack);
     }
 
     public void onRollover()
@@ -101,13 +104,13 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         transform.DOScaleY(2.4f, 0.6f).SetEase(Ease.OutBack);*/
 		transform.DOKill();
 		transform.DOScale(_clickScale, _animDurations).SetEase(Ease.OutBack).OnComplete(() => {
-			rend = GetComponent<Renderer>();
-			rend.material = material2;
+			//rend = GetComponent<Renderer>();
+			_hideSprite.material = material2;
 			transform.DOScale(_clickScale, 2.5f).OnComplete(() =>
 			{
 				//rend.material = Empty;
 				//rend.material.color.a = 0;
-				rend.enabled = false;
+				_hideSprite.enabled = false;
 
 			});
 		});

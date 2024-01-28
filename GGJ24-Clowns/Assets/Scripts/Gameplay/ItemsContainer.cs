@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemsContainer : MonoBehaviour
@@ -7,6 +8,8 @@ public class ItemsContainer : MonoBehaviour
 	private ObjectPool _itemsPool;
 	[SerializeField]
 	private List<Transform> _positions;
+	[SerializeField]
+	private Transform _briefcase;
 
 	private readonly List<ItemSearch> _activeItems = new List<ItemSearch>();
 
@@ -34,14 +37,18 @@ public class ItemsContainer : MonoBehaviour
 			newItem.transform.position = _positions[i].position;
 			_activeItems.Add(newItem);
 		}
+
+		_briefcase.transform.localScale = new Vector3(1, 0, 1);
 	}
 
 	public void Show()
 	{
 		foreach (ItemSearch item in _activeItems)
 		{
-			item.Show();
+			item.Show(.2f);
 		}
+
+		_briefcase.transform.DOScaleY(1, .3f);
 	}
 
 	public void Hide()
@@ -50,6 +57,8 @@ public class ItemsContainer : MonoBehaviour
 		{
 			item.Hide();
 		}
+
+		_briefcase.transform.DOScaleY(0, .3f).SetDelay(.4f);
 	}
 }
 
