@@ -26,6 +26,7 @@ public class PersonController : MonoBehaviour
 	private void Awake()
 	{
 		_originalPosition = transform.localPosition;
+		transform.localPosition = _originalPosition - _offsetPosition;
 	}
 
 	public void Init(PeopleData newData)

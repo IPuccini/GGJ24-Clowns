@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MenuController : MonoBehaviour
 {
@@ -26,12 +27,20 @@ public class MenuController : MonoBehaviour
 
 	public void Hide()
 	{
-		gameObject.SetActive(false);
+		// Little hack, don't do this at home
+		transform.DOScaleX(1.1f, .2f).OnComplete(() =>
+		{
+			transform.localScale = Vector3.one;
+
+			gameObject.SetActive(false);
+		});
 	}
 
 	private void OnStartPressed()
 	{
 		OnStart?.Invoke();
+		FindObjectOfType<AudioManager>().Play("BGMusic");
+
 	}
 
 }
