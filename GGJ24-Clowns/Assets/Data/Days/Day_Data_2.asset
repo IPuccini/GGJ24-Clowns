@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a5b4e5ee596b549a06994fbd1eb3b7, type: 3}
   m_Name: Day_Data_2
   m_EditorClassIdentifier: 
-  _description: not a funny company is no place for clowns!
+  _description: unfunny business is no place for clowns!
   _levelDuration: 10
   _extraTime: 5
+  _loseTime: 5
   _people:
   - {fileID: 11400000, guid: 93b933691d6f4a344b152bbe2fb0e3c0, type: 2}
   - {fileID: 11400000, guid: 02fefbaa484f1474ba5eb23923c8e769, type: 2}
