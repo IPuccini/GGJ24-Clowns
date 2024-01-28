@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678664bdcfe0afb4fab74277b5e9428a, type: 3}
   m_Name: ItemData_BalloonAnimal
   m_EditorClassIdentifier: 
-  _hideSprite: {fileID: 21300000, guid: d85183a001a177647b223b02c7ef7327, type: 3}
+  _hideSprite: {fileID: 21300000, guid: 87c2a47b177ce104a88a232921981fd1, type: 3}
   _realSprite: {fileID: 21300000, guid: f8aa9d777e75d6d4eab754f7c4c570c4, type: 3}
   _properties:
   - {fileID: 11400000, guid: ed5842917164153419a4a4e7889fbd6d, type: 2}

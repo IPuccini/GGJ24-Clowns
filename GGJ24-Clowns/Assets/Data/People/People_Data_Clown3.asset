@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4abd3938990cf5249900baef79ab342e, type: 3}
-  m_Name: People_Data_Clown1
+  m_Name: People_Data_Clown3
   m_EditorClassIdentifier: 
   _items:
-  - {fileID: 11400000, guid: 3c7ddb12ce6bf7b46a5ba6a6c9344908, type: 2}
-  - {fileID: 11400000, guid: e52ff63f729a9b24fb75459eca79b862, type: 2}
-  - {fileID: 11400000, guid: fe576a7d7da99fb47afe46d46a2af72b, type: 2}
+  - {fileID: 11400000, guid: ddc80b429aa72d1429ee6e4b22754e8a, type: 2}
+  - {fileID: 11400000, guid: a2ffa6082b61dd546be489e3a195e821, type: 2}
+  - {fileID: 11400000, guid: 2509a322a93708245bc0d903026c4c9e, type: 2}
+  - {fileID: 11400000, guid: 2509a322a93708245bc0d903026c4c9e, type: 2}

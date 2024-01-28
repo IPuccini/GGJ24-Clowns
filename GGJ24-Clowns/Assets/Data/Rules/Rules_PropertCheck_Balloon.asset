@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42bdb6e25128df48b2ec99f7746b138, type: 3}
-  m_Name: Rules_PropertCheck_ClownPie
+  m_Name: Rules_PropertCheck_Balloon
   m_EditorClassIdentifier: 
-  _text: no pie clown
-  _property: {fileID: 11400000, guid: ed02b93f0be99a14fad45bdcccca03f2, type: 2}
+  _text: no balloons!
+  _property: {fileID: 11400000, guid: ed5842917164153419a4a4e7889fbd6d, type: 2}
   _condition: 0
   _triggerValue: 1
