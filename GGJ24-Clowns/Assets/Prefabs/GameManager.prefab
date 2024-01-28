@@ -45,4 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _personController: {fileID: 0}
-  _initialDayData: {fileID: 0}
+  _itemsContainer: {fileID: 0}
+  _rulesContainer: {fileID: 0}
+  _clock: {fileID: 0}
+  _daysData:
+  - {fileID: 11400000, guid: 12ec926a4ca59a64f95eae5d512335f9, type: 2}
+  - {fileID: 11400000, guid: bbd5d0867e4cde94d9e25b6fb0767738, type: 2}
+  - {fileID: 11400000, guid: 8510fc88ad1fd254fb5706d48c34162b, type: 2}

@@ -94,7 +94,7 @@ MonoBehaviour:
   _gameplay: {fileID: 0}
   _canvasGroup: {fileID: 0}
   _nextSate: {fileID: 7726667096403096435}
-  _timeOverState: {fileID: 0}
+  _timeOverState: {fileID: 5822960684485872741}
 --- !u!1 &7726667096204369515
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameplay: {fileID: 0}
   _dayUI: {fileID: 0}
-  _nextSate: {fileID: 0}
+  _nextSate: {fileID: 8494687314812503344}
 --- !u!1 &7726667096762913536
 GameObject:
   m_ObjectHideFlags: 0
