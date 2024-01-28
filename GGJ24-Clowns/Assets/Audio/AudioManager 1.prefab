@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2586696551367222042
+--- !u!1 &4354704982772732129
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2586696551367222047}
-  - component: {fileID: 2586696551367222044}
-  - component: {fileID: 2586696551367222045}
-  - component: {fileID: 2586696551367222046}
+  - component: {fileID: 4354704982772732132}
+  - component: {fileID: 4354704982772732135}
+  - component: {fileID: 4354704982772732134}
+  - component: {fileID: 4354704982772732133}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2586696551367222047
+--- !u!4 &4354704982772732132
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2586696551367222042}
+  m_GameObject: {fileID: 4354704982772732129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1080.7823, y: 593.83813, z: -3.5918136}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2586696551367222044
+--- !u!114 &4354704982772732135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2586696551367222042}
+  m_GameObject: {fileID: 4354704982772732129}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2e9737eeab94e95b7b0fe7153802f8, type: 3}
@@ -52,13 +52,53 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
---- !u!82 &2586696551367222045
+  - name: Click
+    clip: {fileID: 8300000, guid: 8508cb8ff49c845f19edc6f4b1fea324, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: 805922a411e6b4bdbb8aff8cdd766891, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Hover
+    clip: {fileID: 8300000, guid: daafc031c83cd4e839c8c29debfdafc2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: MouseOff
+    clip: {fileID: 8300000, guid: 381ce450b132546c3a13f7305ca67123, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Incorrect
+    clip: {fileID: 8300000, guid: a94e83d6853e44a43bbce24640e401ca, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Chime
+    clip: {fileID: 8300000, guid: ae996a5c96a6d42f9aed020bc23fb922, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Chime2
+    clip: {fileID: 8300000, guid: e2e86d4fc1a1b441e9c8ba0c9ec8df08, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Chime3
+    clip: {fileID: 8300000, guid: da51b560321f740c49bd18f6fd4b8800, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!82 &4354704982772732134
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2586696551367222042}
+  m_GameObject: {fileID: 4354704982772732129}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -148,11 +188,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &2586696551367222046
+--- !u!81 &4354704982772732133
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2586696551367222042}
+  m_GameObject: {fileID: 4354704982772732129}
   m_Enabled: 1
