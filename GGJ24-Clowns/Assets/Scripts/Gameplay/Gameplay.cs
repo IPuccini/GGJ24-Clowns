@@ -122,7 +122,7 @@ public class Gameplay : MonoBehaviour
 			{
 				Debug.Log("WRONG! A clown was accepted");
 				_personController.Hide();
-
+                FindObjectOfType<AudioManager>().Play("Incorrect");
 
 				UpdateTimer(_currentDay.LoseTime);
 
@@ -133,20 +133,26 @@ public class Gameplay : MonoBehaviour
 				UpdateTimer(-_currentDay.ExtraTime);
 
 				_personController.Hide(true);
+				FindObjectOfType<AudioManager>().Play("Correct");
+
 			}
-		}else
+		}
+		else
 		{
 			if (!accept)
 			{
 				Debug.Log("WRONG! A normal person was NOT accepted");
 				_personController.Hide(true);
 				UpdateTimer(_currentDay.LoseTime);
+				FindObjectOfType<AudioManager>().Play("Incorrect");
 			}
 			else
 			{
 				Debug.Log("NICE! A normal person was accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
 				_personController.Hide();
+				FindObjectOfType<AudioManager>().Play("Correct");
+
 			}
 		}
 		_itemsContainer.Hide();
