@@ -123,6 +123,9 @@ public class Gameplay : MonoBehaviour
 				Debug.Log("WRONG! A clown was accepted");
 				_personController.Hide();
 
+
+				UpdateTimer(_currentDay.LoseTime);
+
 			}
 			else
 			{
@@ -137,6 +140,7 @@ public class Gameplay : MonoBehaviour
 			{
 				Debug.Log("WRONG! A normal person was NOT accepted");
 				_personController.Hide(true);
+				UpdateTimer(_currentDay.LoseTime);
 			}
 			else
 			{
