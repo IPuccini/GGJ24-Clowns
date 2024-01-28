@@ -32,7 +32,7 @@ public class Gameplay : MonoBehaviour
 
 	private float _timer = 0;
 	private bool _active = false;
-	private int _currentDayIndex = -1;
+	public int _currentDayIndex = -1;
 
 
 	private readonly List<PeopleData> _currentPeople = new List<PeopleData>();
@@ -79,6 +79,8 @@ public class Gameplay : MonoBehaviour
 
 		_buttons.interactable = false;
 	}
+
+
 
 	private void Update()
 	{

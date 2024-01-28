@@ -17,6 +17,7 @@ public class StateStart : State
 	{
 		base.Enter(manager);
 
+		_gameplay._currentDayIndex = -1;
 		_gameplay.NextDay();
 		_dayUI.Show(_gameplay.CurrentDayData.Description, _gameplay.CurrentDayIndex);
 		_dayUI.gameObject.SetActive(true);// TODO

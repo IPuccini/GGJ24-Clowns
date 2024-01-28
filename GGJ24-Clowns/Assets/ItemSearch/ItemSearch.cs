@@ -62,6 +62,10 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
 		gameObject.SetActive(true);
 
+		material2.SetFloat("_Position", 1f);
+
+		_realSprite.transform.localScale = Vector3.zero;
+
     }
 
     public void Show(float delay)
@@ -136,10 +140,10 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
 
             ShaderPos = 1f;
-            material2.SetFloat("Position", ShaderPos);
+            material2.SetFloat("_Position", 1f);
 
-
-            DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnUpdate(AssetPostProcess);
+            _realSprite.transform.DOScale(Vector3.one, .1f);
+            DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 1f).OnUpdate(AssetPostProcess);
             //{
             //    Debug.Log("Shader:" + ShaderPos);
             //    //material2.SetFloat("Position", ShaderPos);
