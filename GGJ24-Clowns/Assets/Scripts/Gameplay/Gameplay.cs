@@ -44,7 +44,6 @@ public class Gameplay : MonoBehaviour
 		_personController.OnPersonShow += ShowItems;
 		_personController.OnPersonHide += NextPerson;
 
-		FindObjectOfType<AudioManager>().Play("BGMusic");
 	}
 
 	private void ShowItems()
@@ -121,22 +120,32 @@ public class Gameplay : MonoBehaviour
 			if (accept)
 			{
 				Debug.Log("WRONG! A clown was accepted");
+				//FindObjectOfType<AudioManager>().Play("Incorrect");
 
-			}else
+
+			}
+			else
 			{
 				Debug.Log("NICE! A clown was NOT accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
+				//FindObjectOfType<AudioManager>().Play("Correct");
+
 			}
-		}else
+		}
+		else
 		{
 			if (!accept)
 			{
 				Debug.Log("WRONG! A normal person was NOT accepted");
+				//FindObjectOfType<AudioManager>().Play("Incorrect");
+
 			}
 			else
 			{
 				Debug.Log("NICE! A normal person was accepted");
 				UpdateTimer(-_currentDay.ExtraTime);
+				//FindObjectOfType<AudioManager>().Play("Correct");
+
 			}
 		}
 		_personController.Reveal();

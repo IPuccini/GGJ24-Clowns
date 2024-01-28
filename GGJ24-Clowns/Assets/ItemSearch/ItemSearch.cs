@@ -31,10 +31,12 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public bool allowRollover = true;
 
+    public float ShaderPos = 1;
 
-	public void Init(ItemData itemData)
+    public void Init(ItemData itemData)
 	{
 		transform.DOKill();
+
 
         _data = itemData;
         _hideSprite.sprite = _data.HideSprite;
@@ -69,6 +71,8 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         //transform.DOScaleY(2.2f, 0.6f).SetEase(Ease.OutSine);
         transform.DOKill();
         transform.DOScale(_rollOverScale, _animDurations).SetEase(Ease.OutSine);
+        FindObjectOfType<AudioManager>().Play("Hover");
+
     }
 
     public void onRolloverOff()
@@ -81,6 +85,8 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 		//transform.DOScaleY(2.0f, 0.6f).SetEase(Ease.OutBounce);
 		transform.DOKill();
 		transform.DOScale(_normalScale, _animDurations).SetEase(Ease.OutBounce);
+        FindObjectOfType<AudioManager>().Play("MouseOff");
+
     }
 
     public void onClickShaderAnim()
@@ -89,7 +95,10 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
         allowRollover = false;
 
-		/*Debug.Log("RO");
+        FindObjectOfType<AudioManager>().Play("Chime");
+
+
+        /*Debug.Log("RO");
         transform.DOScaleX(2.4f, 0.6f).SetEase(Ease.OutBack).OnComplete(() => {
             rend = GetComponent<Renderer>();
             rend.material = material2;
@@ -102,18 +111,28 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
             });
         });
         transform.DOScaleY(2.4f, 0.6f).SetEase(Ease.OutBack);*/
-		transform.DOKill();
+        transform.DOKill();
 		transform.DOScale(_clickScale, _animDurations).SetEase(Ease.OutBack).OnComplete(() => {
 			//rend = GetComponent<Renderer>();
 			_hideSprite.material = material2;
-			transform.DOScale(_clickScale, 2.5f).OnComplete(() =>
-			{
-				//rend.material = Empty;
-				//rend.material.color.a = 0;
-				_hideSprite.enabled = false;
 
-			});
-		});
+
+            ShaderPos = 1;
+            //material2.SetFloat("Position", ShaderPos);
+
+
+            DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnStepComplete(()=> {
+                material2.SetFloat("Position", ShaderPos);
+            });
+
+            transform.DOScale(_clickScale, 2.5f).OnComplete(() =>
+            {
+                //rend.material = Empty;
+                //rend.material.color.a = 0;
+                //_hideSprite.enabled = false;
+
+            });
+        });
 	}
 
 	public void OnPointerClick(PointerEventData eventData)

@@ -32,6 +32,8 @@ public class MenuController : MonoBehaviour
 	private void OnStartPressed()
 	{
 		OnStart?.Invoke();
+		FindObjectOfType<AudioManager>().Play("BGMusic");
+
 	}
 
 }
