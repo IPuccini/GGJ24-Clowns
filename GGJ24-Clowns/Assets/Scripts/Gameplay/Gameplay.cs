@@ -43,6 +43,8 @@ public class Gameplay : MonoBehaviour
 	{
 		_personController.OnPersonShow += ShowItems;
 		_personController.OnPersonHide += NextPerson;
+
+		FindObjectOfType<AudioManager>().Play("BGMusic");
 	}
 
 	private void ShowItems()
