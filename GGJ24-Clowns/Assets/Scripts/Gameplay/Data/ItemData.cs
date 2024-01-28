@@ -12,6 +12,7 @@ public class ItemData : ScriptableObject
 	[SerializeField]
 	private ItemPropertyBase[] _properties;
 
+	public Texture2D TexSprite => _realSprite.texture;
 
 	public Sprite HideSprite => _hideSprite;
 	public Sprite RealSprite => _realSprite;

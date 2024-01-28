@@ -31,9 +31,16 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public bool allowRollover = true;
 
-    //public float ShaderPos = 1;
+    public Texture2D texture;
 
-    public void Init(ItemData itemData)
+    public Material[] materials;
+
+    public int IDShader;
+
+
+    public float ShaderPos = 1;
+
+    public void Init(ItemData itemData, int ID)
 	{
 		transform.DOKill();
 
@@ -41,13 +48,20 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         _data = itemData;
         _hideSprite.sprite = _data.HideSprite;
         _realSprite.sprite = _data.RealSprite;
-        _realSprite.gameObject.SetActive(false);
+        //_realSprite.gameObject.SetActive(false);
         transform.localScale = Vector3.zero;
 
-        _hideSprite.material = material1; // Reseting material
-		_hideSprite.enabled = true;
+        //_hideSprite.material = material1; // Reseting material
+
+        //material2 = Resources.Load("Shaders/ItemMat/Dissolve_" + ID + ".mat", typeof(Material)) as Material;
+        //material2 = materials[ID];
+        IDShader = ID;
+        _hideSprite.enabled = true;
+
+        texture = _data.TexSprite;
 
 		gameObject.SetActive(true);
+
     }
 
     public void Show(float delay)
@@ -97,6 +111,10 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
         FindObjectOfType<AudioManager>().Play("Chime");
 
+        material2.SetTexture("ItemIMG", texture);
+
+        material2 = materials[IDShader];
+
 
         /*Debug.Log("RO");
         transform.DOScaleX(2.4f, 0.6f).SetEase(Ease.OutBack).OnComplete(() => {
@@ -117,25 +135,34 @@ public class ItemSearch : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 			_hideSprite.material = material2;
 
 
-            //ShaderPos = 1;
-            //material2.SetFloat("Position", ShaderPos);
+            ShaderPos = 1f;
+            material2.SetFloat("Position", ShaderPos);
 
 
-            //DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnStepComplete(()=> {
-            //    material2.SetFloat("Position", ShaderPos);
-            //});
+            DOTween.To(() => ShaderPos, x => ShaderPos = x, -1f, 5f).OnUpdate(AssetPostProcess);
+            //{
+            //    Debug.Log("Shader:" + ShaderPos);
+            //    //material2.SetFloat("Position", ShaderPos);
+            //    AssetPostProcess();
+            //);
 
             transform.DOScale(_clickScale, 2.5f).OnComplete(() =>
             {
                 //rend.material = Empty;
                 //rend.material.color.a = 0;
-                _hideSprite.enabled = false;
+                //_hideSprite.enabled = false;
 
             });
         });
 	}
 
-	public void OnPointerClick(PointerEventData eventData)
+    public void AssetPostProcess()
+    {
+        material2.SetFloat("_Position", ShaderPos);
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
 	{
         onClickShaderAnim();
 	}

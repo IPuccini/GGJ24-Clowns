@@ -37,7 +37,7 @@ public class ItemsContainer : MonoBehaviour
 		{
 
 			ItemSearch newItem = _itemsPool.GetPooledObject().GetComponent<ItemSearch>();
-			newItem.Init(items[i]);
+			newItem.Init(items[i], i);
 			newItem.transform.parent = transform;
 			newItem.transform.position = _positions[i].position;
 			_activeItems.Add(newItem);
